@@ -35,9 +35,80 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
+     /* ヘッダーのスタイル */
+header {
+  background-color: rgba(255, 255, 255, 0.8)!important; /* 背景色を白で80%の透明度に設定 */
+  border-bottom: 1px solid #ddd;
+  z-index: 1000; /* 他の要素の上に固定するためのz-index */
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.social-icons img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.social-icons img:hover {
+  filter: grayscale(0%);
+}
+
+.container.mt-5 {
+  margin-top: 150px; /* ヘッダーの高さ分のマージンを追加 */
+}
+     
      body {
        font-family: "Roboto", "Noto Sans JP";
      } 
+     
+     .btn--black,
+        a.btn--black {
+          color: #fff;
+          background-color: #000000;
+          padding: 3px 10px; /* 上下5px、左右10pxのパディング */
+        }
+        .btn--black:hover,
+        a.btn--black:hover {
+          color: #fff;
+          background: #000000;
+        }
+
+    .btn--white,
+      a.btn--white {
+        color: #000; /* テキストカラーを黒に */
+        background-color: #fff; /* 背景を白に */
+        border: 1px solid #000; /* 必要なら黒のボーダーを追加 */
+        padding: 3px 10px; /* 上下5px、左右10pxのパディング */
+      }
+
+      .btn--white:hover,
+      a.btn--white:hover {
+        color: #000; /* ホバー時のテキストカラー */
+        background-color: #f0f0f0; /* ホバー時の背景を少しグレーに */
+        border: 1px solid #000; /* 必要なら黒のボーダー */
+      }
+      .flex-grow-0 {
+        margin-right: 3px; /* ボタンの右側に10pxのマージンを追加 */
+        margin-bottom: 2px; /* 縦方向にも少しスペースを追加 */
+      }
+
+      .d-flex.flex-wrap {
+        gap: 2px; /* フレックス要素同士に均等な隙間を作る場合はgapも有効 */
+      }
+
+      h1 {
+        margin-top: 100px; /* ヘッダーの高さに応じて調整 */
+      }
+      .social-icons a {
+  text-decoration: none; /* アンダーバーを消す */
+}
+
+
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
@@ -53,22 +124,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T96WLVWC"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <div class="container mt-5">
-        <div class="col-lg-10 offset-lg-1"><!-- レイアウト-->
+<header class="fixed-top shadow-sm">
+  <nav class="container d-flex justify-content-end align-items-center py-2">
+    <div class="social-icons">
+      <a href="https://x.com/say____u" target="_blank" class="me-2">
+        <img src="assets/sns_icon/x.png" alt="Twitter" width="24">
+      </a>
+      <a href="https://www.instagram.com/us_yu3/" target="_blank" class="me-2">
+        <img src="assets/sns_icon/instagram.png" alt="Instagram" width="24">
+      </a>
+      <a href="mailto:www.satsuki.wada@gmail.com" target="_blank">
+        <img src="assets/sns_icon/mail.png" alt="mail" width="24">
+      </a>
+    </div>
+  </nav>
+</header>
 
-      　  <h1 name="top">Satsuki Wada</h1><!-- 名前 -->
+    <div class="container mt-5">
+      <div class="col-lg-10 offset-lg-1">
+        <div>
+          <h1 name="top">Satsuki Wada</h1><!-- 名前 -->
 
           <div class="row pb-5 pt-2">
             <p>Designer / Scenario writer / Consultant / Illustrator etc...</p>
           </div><!-- 自己紹介 -->
 
+        </div>
         <div class="row pt-5 pb-5">
-         <a name="works">Design</a>
+          <div class="sort-btn mb-4">
+            <div class="d-flex flex-wrap mb-1 px-1 f-14">
+                <div class="flex-grow-0"><a class="btn btn--black" href="index.html"> #All</a></div>  
+                  <div class="flex-grow-0"><a class="btn btn--white" href="product.html"> #Product</a></div>
+                  <div class="flex-grow-0"><a class="btn btn--white" href="zine.html"> #Zine</a></div>
+                  <div class="flex-grow-0"><a class="btn btn--white" href="movie.html"> #Movie & Scenario</a></div>
+                  <div class="flex-grow-0"><a class="btn btn--white" href="illustration.html"> #Illustration</a></div>
+                 
+                </div>
+          </div>
+  
+          <a name="works">Design</a>
           <div class="row pt-2 pb-2"></div><!-- 小見出し -->
 
           <div class="col-lg-4">
             <a href="comp.html" class="text-dark text-decoration-none">
-              <img src="assets/comp/comp01.png" class="img-fluid" alt="">
+              <img src="assets/comp/comp_thum.png" class="img-fluid" alt="">
               <div class="mt-1">
                 <h5 class="mb-0">劣等感のすゝめ</h5>
                 <p style="font-size: 12px">劣等感の魅力、能力主義社会が生み出す歪みについて語った文章群。</p>
@@ -78,7 +177,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <div class="col-lg-4">
             <a href="utsuwa.html" class="text-dark text-decoration-none">
-              <img src="assets/utsuwa/utsuwa01.png" class="img-fluid" alt="">
+              <img src="assets/utsuwa/utsuwa_thum.png" class="img-fluid" alt="">
               <div class="mt-1">
                 <h5 class="mb-0">器 utsuwa</h5>
                 <p style="font-size: 12px">器のコレクション・紹介</p>
@@ -88,7 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <div class="col-lg-4">
             <a href="neoconnection.html" class="text-dark text-decoration-none">
-              <img src="assets/neoconnection-top.jpg" class="img-fluid" alt="">
+              <img src="assets/neo/neoconnection-top.jpg" class="img-fluid" alt="">
               <div class="mt-1">
                 <h5 class="mb-0">NEO CONNECTION</h5>
                 <p style="font-size: 12px">誰もが自分らしい「繋がり方」を選択できる未来のためのコンセプト・デザイン</p>
@@ -98,7 +197,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <div class="col-lg-4">
             <a href="owns.html" class="text-dark text-decoration-none">
-              <img src="assets/owns-top.jpg" class="img-fluid" alt="">
+              <img src="assets/owns/owns-top.jpg" class="img-fluid" alt="">
               <div class="mt-1">
                 <h5 class="mb-0">OWNS</h5>
                 <p style="font-size: 12px">大量生産/大量消費に対するアンチテーゼ。モノを所有し続けるためのソリューション</p>
@@ -108,7 +207,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <div class="col-lg-4">
             <a href="ooze.html" class="text-dark text-decoration-none">
-              <img src="assets/ooze-top.jpg" class="img-fluid" alt="">
+              <img src="assets/ooze/ooze-top.jpg" class="img-fluid" alt="">
               <div class="mt-1">
                 <h5 class="mb-0">ooze</h5>
                 <p style="font-size: 12px">敢えて解像度を下げて他人を感じることの心地よさを追求した、気配で繋がるエンターテイメント</p>
@@ -127,7 +226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          
           <div class="col-lg-4">
             <a href="talkn.html" class="text-dark text-decoration-none">
-              <img src="assets/chair-top.jpg" class="img-fluid" alt="">
+              <img src="assets/chair/chair-top.jpg" class="img-fluid" alt="">
               <div class="mt-1">
                 <h5 class="mb-0">Talkn</h5>
                 <p style="font-size: 12px">"しるし"の付いた小学校用椅子</p>
@@ -137,7 +236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <div class="col-lg-4">
             <a href="petoile.html" class="text-dark text-decoration-none">
-              <img src="assets/petoile-top.jpg" class="img-fluid" alt="">
+              <img src="assets/pet/petoile-top.jpg" class="img-fluid" alt="">
               <div class="mt-1">
                 <h5 class="mb-0">petoile</h5>
                 <p style="font-size: 12px">星を捕まえ、飼育できるプロダクト</p>
@@ -146,7 +245,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="col-lg-4">
             <a href="dandan.html" class="text-dark text-decoration-none">
-              <img src="assets/dandan-top.jpg" class="img-fluid" alt="">
+              <img src="assets/dandan/dandan-top.jpg" class="img-fluid" alt="">
               <div class="mt-1">
                 <h5 class="mb-0">だんだん </h5>
                 <p style="font-size: 12px">在宅介護のためのIoTミラー</p>
