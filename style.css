@@ -4,6 +4,9 @@ header {
     border-bottom: 1px solid #ddd;
     z-index: 1000;
   }
+  body {
+    font-family: "Noto Sans JP"!important;
+  }
   
   .fixed-top {
     position: fixed;
@@ -25,9 +28,7 @@ header {
     margin-top: 150px;
   }
   
-  body {
-    font-family: "Roboto", "Noto Sans JP";
-  }
+
   
   .btn--black,
   a.btn--black {
