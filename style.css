@@ -233,3 +233,32 @@ h5 {
   border-top: 2px solid #ccc; /* 上部の線を2pxの灰色で表示 */
   margin: 20px 0; /* 上下に20pxの余白 */
 }
+
+/* デフォルトのPC版スタイル */
+.card-section .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-section .image-content {
+  order: 0; /* 画像部分の順序 */
+}
+
+.card-section .text-content {
+  order: 1; /* テキスト部分の順序 */
+}
+
+/* SP版のスタイル */
+@media screen and (max-width: 768px) {
+  .card-section .row {
+      flex-direction: column; /* 要素を縦方向に並べる */
+  }
+
+  .card-section .image-content {
+      order: -1; /* 画像部分を上に配置 */
+  }
+
+  .card-section .text-content {
+      order: 0; /* テキスト部分を画像の下に配置 */
+  }
+}
