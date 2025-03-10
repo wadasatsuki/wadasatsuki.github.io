@@ -12,9 +12,9 @@
     </script>
   <!-- Google Tag Manager -->
   
-    <title>Satsuki Wada Works</title>
+    <title>劣等感のすゝめ-劣等感に関するzine</title>
     <meta property="og:url" content="http://wsatsuki.com/" />
-    <meta property="og:title" content="Satsuki Wada Works">
+    <meta property="og:title" content="劣等感のすゝめ-劣等感に関するzine">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Designer / Consultant / Illustrator etc...">
     <meta property="og:image" content="assets/ogp.jpg">
@@ -37,24 +37,17 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T96WLVWC"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-    <header class="fixed-top shadow-sm">
-      <nav class="container d-flex justify-content-between align-items-center py-2">
-        <div class="mb-0">  <!-- mb-0でマージンをリセット -->
-          <a href="index.html" class="text-secondary text-decoration-none">home</a>
-        </div>
-        <div class="social-icons d-flex">
-          <a href="https://x.com/say____u" target="_blank" class="me-2">
-            <img src="assets/sns_icon/x.png" alt="Twitter" width="24">
-          </a>
-          <a href="https://www.instagram.com/us_yu3/" target="_blank" class="me-2">
-            <img src="assets/sns_icon/instagram.png" alt="Instagram" width="24">
-          </a>
-          <a href="mailto:www.satsuki.wada@gmail.com" target="_blank">
-            <img src="assets/sns_icon/mail.png" alt="mail" width="24">
-          </a>
-        </div>
-      </nav>
-    </header>
+  <div id="header-placeholder"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("/header.html") // 絶対パスで指定
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading header:", error));
+    });
+  </script>
     
     <div class="container mt-3 mb-5">
       <div class="col-lg-10 offset-lg-1">

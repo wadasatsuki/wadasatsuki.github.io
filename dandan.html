@@ -11,10 +11,21 @@
       gtag('config', 'G-NNTN7K82T8');
     </script>
   <!-- Google Tag Manager -->
+  <div id="header-placeholder"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("/header.html") // 絶対パスで指定
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading header:", error));
+    });
+  </script>
   
-    <title>Satsuki Wada Works</title>
+    <title>だんだん-住宅における匂い・菌に関する製品・システムの提案</title>
     <meta property="og:url" content="http://wsatsuki.com/" />
-    <meta property="og:title" content="Satsuki Wada Works">
+    <meta property="og:title" content="だんだん-住宅における匂い・菌に関する製品・システムの提案">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Designer / Consultant / Illustrator etc...">
     <meta property="og:image" content="assets/ogp.jpg">
