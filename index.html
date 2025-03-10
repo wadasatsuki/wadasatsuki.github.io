@@ -39,21 +39,16 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T96WLVWC"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header class="fixed-top shadow-sm">
-  <nav class="container d-flex justify-content-end align-items-center py-2">
-    <div class="social-icons">
-      <a href="https://x.com/say____u" target="_blank" class="me-2">
-        <img src="assets/sns_icon/x.png" alt="Twitter" width="24">
-      </a>
-      <a href="https://www.instagram.com/us_yu3/" target="_blank" class="me-2">
-        <img src="assets/sns_icon/instagram.png" alt="Instagram" width="24">
-      </a>
-      <a href="mailto:www.satsuki.wada@gmail.com" target="_blank">
-        <img src="assets/sns_icon/mail.png" alt="mail" width="24">
-      </a>
-    </div>
-  </nav>
-</header>
+<div id="header-placeholder"></div>
+
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    });
+</script>
+
 
     <div class="container mt-5">
       <div class="col-lg-10 offset-lg-1">
@@ -218,19 +213,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="assets/illustration/coffee.jpg" data-lightbox="group"><img src="assets/illustration/coffee-thum.jpg" alt="" width="300"></a>
           </div>
         </div>
+        <hr>
 
 
-        <div class="row pt-5 pb-5"><!-- contact -->
-
+        <div class="row pt-5 pb-5"><!-- profile -->
           <div class="row pb-2">
-            <a>Contact</a>
+            <a name="profile"></a>
           </div>
-
-          <div class="col-lg-8">
-            <img src="assets/face.jpg" width="90px">
-            <div>
-            <a>和田 さつき / Satsuki Wada</a><br>
-            <a href="mailto:www.satsuki.wada@gmail.com">www.satsuki.wada@gmail.com</a>
+        
+          <div class="row align-items-center">
+            <div class="col-lg-3 col-md-4 col-sm-5 mb-4 mb-sm-0">
+              <img src="assets/face.jpg" class="img-fluid rounded" alt="Satsuki Wada">
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-7">
+              <div class="profile-name">和田 さつき / Satsuki Wada</div>
+              
+              <div class="profile-bio">
+                <p>1998年生まれ。2021年に金沢美術工芸大学製品デザイン専攻卒業後、コンサルティングファームでデザイン・デジタルコンサルタントとして活動。</p>
+                </div>
+              
+              <div class="mt-3">
+                <a href="mailto:www.satsuki.wada@gmail.com" class="text-decoration-none">www.satsuki.wada@gmail.com</a>
+              </div>
             </div>
           </div>
         </div>
